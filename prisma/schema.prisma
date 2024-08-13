@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ApiToken {
+  id String @id @default(uuid())
+
+  name  String
+  token String @unique @default(uuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("api_tokens")
+}
+
+model Asset {
+  id String @id @default(uuid())
+
+  orignalFileName String
+  fileName        String
+
+  rawLocation     String
+  encodedLocation String?
+
+  status AssetStatus @default(PROCESSING)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("assets")
+}
+
+enum AssetStatus {
+  PROCESSING
+  DONE
+  FAIL
+}

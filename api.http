@@ -1,0 +1,26 @@
+POST http://localhost:4020/assets
+Content-Type: application/json
+x-api-token: 46a373cbe3299be0aad69b14384a0464
+
+{
+  "storageLocation": "/raw/videolarge.mp4",
+  "fileName": "videolarge.mp4"
+}
+
+###
+
+GET http://localhost:4020/assets
+Content-Type: application/json
+x-api-token: 46a373cbe3299be0aad69b14384a0464
+
+###
+
+DELETE http://localhost:4020/assets/1b2c39b8-1fba-46c1-a774-5459804c01b1
+Content-Type: application/json
+x-api-token: 46a373cbe3299be0aad69b14384a0464
+
+###
+
+GET http://localhost:4020/assets/9c3aaf87-96a4-43bc-981c-c200b4919d08/upload
+Content-Type: application/json
+x-api-token: 46a373cbe3299be0aad69b14384a0464
