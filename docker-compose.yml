@@ -16,15 +16,11 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    restart: always
-    container_name: nest-pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=postgres
       - PGADMIN_DEFAULT_PASSWORD=docker
     ports:
       - '5050:5050'
-    depends_on:
-      - postgres
 
   redis:
     container_name: nest-clean-cache
